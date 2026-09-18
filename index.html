@@ -1,1 +1,25 @@
-<div id="root"></div><script type="module" src="/src/main.jsx"></script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173f5f" />
+    <title>Project Blue</title>
+    <style>
+      /* Keep the first paint useful while the application bundle is loading. */
+      html, body, #root { height: 100%; margin: 0; }
+      body { background: #f8fafc; font-family: system-ui, sans-serif; }
+      .boot-screen { height: 100%; display: grid; place-items: center; color: #173f5f; }
+      .boot-screen div { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+      .boot-screen span { width: 12px; height: 12px; border-radius: 50%; background: #173f5f; animation: pulse 1s ease-in-out infinite alternate; }
+      @keyframes pulse { to { opacity: .25; transform: scale(.75); } }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-screen" role="status"><div><span></span>Opening Project Blue…</div></div>
+    </div>
+    <noscript>Project Blue requires JavaScript to run.</noscript>
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>
